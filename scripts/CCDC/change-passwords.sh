@@ -19,8 +19,10 @@ fi
 
 host=$(hostname)
 
-for userDir in /home/*/; do
-	user=$(echo "$userDir" | cut -d/ -f3)
+for user in $(awk -F: '$7 ~ /(\/sh|\/bash)/ { print $1 }' /etc/passwd); do
+	if [[ $(id -u $user) -eq 0 ]]; then # Don't change password for root
+		continue
+	fi
 	echo "Changing password for $user"
 	newPass="$passTemp$delim$host$delim$user"
 	echo -e "$newPass\\n$newPass" | passwd "$user"
