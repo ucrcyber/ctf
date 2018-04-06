@@ -45,6 +45,7 @@ async function main () {
       json: true
     })
     console.log('Got response:', data, 'for', target.question, 'with answer:', answer)
+    if (data.flag) return console.log('Got flag:', data.flag)
   }
 }
 
