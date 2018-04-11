@@ -4,10 +4,16 @@ from pwn import *
 r = ssh(host='pwnable.kr',
         user='fd',
         password='guest',
-        port='2222')
+        port=2222)
 
 # Run program #
-r.run('fd','4660')
+p = r.process(['fd','4660'])
 
-# Send keyphrase to STDIN #
-r.send('LETMEWIN\n')
+# Send "LETMEWIN\n" to STDIN
+p.sendline('LETMEWIN')
+
+# Recieve output from the process #
+output = p.recvall()
+
+print(output)
+
