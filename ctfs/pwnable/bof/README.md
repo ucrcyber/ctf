@@ -55,7 +55,7 @@ After we exit the interactive shell, the bof binary encounters our stack smash a
 
 ## Explaination ##
 
-TODO
+TODOs
 
 ### Initial Survey / Static Analysis
 
