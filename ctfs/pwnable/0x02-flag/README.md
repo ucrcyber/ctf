@@ -1,6 +1,6 @@
 # `flag` #
 
-## Challenge Text ##
+## Problem Description ##
 
 Papa brought me a packed present! let's open it.
 
